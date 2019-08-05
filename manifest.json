@@ -1,0 +1,23 @@
+{
+  "name": "Search by Date",
+  "description": "Customize your search results by date",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions" : [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.google.com/search?*"
+  ],
+  "icons": {
+    "16": "imgs/icon16.png",
+    "32": "imgs/icon32.png",
+    "48": "imgs/icon48.png",
+    "128": "imgs/icon128.png"
+  },
+  "manifest_version": 2
+}

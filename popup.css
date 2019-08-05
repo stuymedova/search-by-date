@@ -1,0 +1,35 @@
+body {
+  min-width: 312px;
+  background-color: #121217
+}
+
+p {
+  text-align: center;
+  font-family: "Futura PT";
+  font-size: 18px;
+  color: #fafafa;
+  margin: 5px
+}
+
+table {
+  font-family: "Century Gothic";
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color:#fafafa;
+  
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  border-collapse: separate;
+  border:1px solid #63636e;
+  border-spacing: 10px 0;
+  border-radius: 15px;
+  margin: 0px
+}
+
+tr.row>td {
+  padding: 3px
+}
