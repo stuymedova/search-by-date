@@ -1,7 +1,7 @@
 {
   "name": "Search by Date",
   "description": "Find what you want. When you want it.",
-  "version": "1.0",
+  "version": "1.1",
   "browser_action": {
     "default_popup": "popup.html"
   },
