@@ -1,4 +1,6 @@
-# search_by_date
+# Search by Date
+
+### Trace the power dynamic of time.
 
 The ultimate "why it's not built-in" app. Allows you to customize search results by date. On the fly.
 
