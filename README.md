@@ -2,7 +2,19 @@
 
 ### Trace the power dynamic of time.
 
-The ultimate "why it's not built-in" app. Allows you to customize search results by date. On the fly.
+It is a professional tool which allows you to search for just what you need within the specific time frame and improve your productivity to give you a competitive advantage at studies and work.
+
+There are 4 ways to specify a date:
+
+1. Date range - date:mm/dd/yyyy-mm/dd/yyyy
+2. One day* - date:mm/dd/yyyy-mm/dd/yyyy
+3. From (date)** - date:mm/dd/yyyy
+4. Up to (date) - date:-mm/dd/yyyy
+
+Don't use spaces. Hereafter for this information you can reference a popup (by clicking on an icon in the top right corner).
+
+*By typing a date twice
+**You can also use this option if searching for today's results
 
 There are 4 ways to specify a date:
 
