@@ -16,6 +16,8 @@ Don't use spaces. Hereafter for this information you can reference a popup (by c
 *By typing a date twice
 **You can also use this option if searching for today's results
 
+#### link: https://chrome.google.com/webstore/detail/search-by-date/cdhckogdanaloniccgjgfjgngmgkelee
+
 ![logo](https://user-images.githubusercontent.com/53351370/62819134-918e0d00-bb59-11e9-95d1-1dc17891677e.png)
 
 ![1](https://user-images.githubusercontent.com/53351370/62665308-766ba380-b987-11e9-99f1-a410ac0c4b42.png)
