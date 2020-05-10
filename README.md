@@ -2,19 +2,19 @@
 
 ### Trace the power dynamic of time.
 
-It is a professional tool which allows you to search for just what you need within the specific time frame and improve your productivity to give you a competitive advantage at studies and work.
+A pro tool which allows you to search for just what you need within the specific time frame. An efficient alternative to Chrome's "Tools -> Any time -> Custom range -> From -> To -> Go" sequence.
 
 There are 4 ways to specify a date:
 
-1. Date range - date:mm/dd/yyyy-mm/dd/yyyy
-2. One day* - date:mm/dd/yyyy-mm/dd/yyyy
-3. From (date)** - date:mm/dd/yyyy
-4. Up to (date) - date:-mm/dd/yyyy
+1. Date range – date:mm/dd/yyyy-mm/dd/yyyy
+2. One day* – date:mm/dd/yyyy-mm/dd/yyyy
+3. From (date)** – date:mm/dd/yyyy
+4. Up to (date) – date:-mm/dd/yyyy
 
-Don't use spaces. Hereafter for this information you can reference a popup (by clicking on an icon in the top right corner).
+Don't use spaces. Hereafter for this information you can reference a popup (by clicking on an extension icon displayed in the top right corner of the browser). Only United States date format is currently supported.
 
 *By typing a date twice
-**You can also use this option if searching for today's results
+**You can also use this option if searching for today results
 
 #### link: https://chrome.google.com/webstore/detail/search-by-date/cdhckogdanaloniccgjgfjgngmgkelee
 
