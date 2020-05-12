@@ -33,9 +33,3 @@ Don't use spaces. Hereafter for this information you can reference a popup (by c
 ![6](https://user-images.githubusercontent.com/53351370/62665313-77043a00-b987-11e9-9919-05e28ad94db1.png)
 
 ![sh1](https://user-images.githubusercontent.com/53351370/62665314-77043a00-b987-11e9-85a6-732c0eec55a5.png)
-
-![sh2](https://user-images.githubusercontent.com/53351370/62665315-77043a00-b987-11e9-81fa-06246798bd61.png)
-
-![sh3](https://user-images.githubusercontent.com/53351370/62665316-779cd080-b987-11e9-84a8-971f7e2b2a87.png)
-
-![sh4](https://user-images.githubusercontent.com/53351370/62665317-779cd080-b987-11e9-9e18-073e389110f1.png)
