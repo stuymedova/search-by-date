@@ -3,7 +3,7 @@
 // #2 - "from (date)"
 // #3 - "up to (date)"
 
-//for reverse engineering follow numbers in the square brackets
+//for reverse engineering follow numbers in square brackets
 
 // [2]
 function updateQuery(defaultUrl) {
