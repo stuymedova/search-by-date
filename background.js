@@ -1,9 +1,9 @@
-//reference to a popup:
+// Reference to a popup:
 // #1 - "date range" & "one day"
 // #2 - "from (date)"
 // #3 - "up to (date)"
 
-//for reverse engineering follow numbers in square brackets
+// For reverse engineering follow numbers in square brackets
 
 // [2]
 function updateQuery(defaultUrl) {
