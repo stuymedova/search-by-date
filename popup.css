@@ -1,18 +1,23 @@
+@font-face {
+  font-family: century-gothic;
+  src:  url('assets/fonts/CenturyGothic-Bold.ttf') format('truetype');
+}
+
 body {
-  min-width: 305px;
-  background-color: #121217
+  width: 305px;
+  background-color: #000;
 }
 
 p {
   text-align: center;
-  font-family: "Futura PT";
+  font-family: century-gothic, sans-serif;
   font-size: 18px;
   color: #fafafa;
-  margin: 5px
+  margin: 5px;
 }
 
 table {
-  font-family: "Century Gothic";
+  font-family: century-gothic, sans-serif;
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 0.02em;
@@ -24,12 +29,12 @@ table {
   padding-bottom: 12px;
 
   border-collapse: separate;
-  border:1px solid #63636e;
+  border: 1px solid #63636e;
   border-spacing: 10px 0;
   border-radius: 15px;
-  margin: 0px
+  margin: 0px;
 }
 
 tr.row>td {
-  padding: 3px
+  padding: 3px;
 }

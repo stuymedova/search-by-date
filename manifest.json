@@ -1,7 +1,6 @@
 {
   "name": "Search by Date",
-  "description": "Trace the power dynamic of time.",
-  "version": "1.1",
+  "version": "1.2",
   "browser_action": {
     "default_popup": "popup.html"
   },
@@ -14,10 +13,10 @@
     "*://*.google.com/search?*"
   ],
   "icons": {
-    "16": "imgs/icon16.png",
-    "32": "imgs/icon32.png",
-    "48": "imgs/icon48.png",
-    "128": "imgs/icon128.png"
+    "16": "assets/imgs/icon16.png",
+    "32": "assets/imgs/icon32.png",
+    "48": "assets/imgs/icon48.png",
+    "128": "assets/imgs/icon128.png"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
