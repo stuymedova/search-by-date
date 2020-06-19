@@ -2,7 +2,7 @@
 
 ### Trace the power dynamic of time.
 
-A pro tool which allows you to search for just what you need within the specific time frame. An efficient alternative to Chrome's "Tools -> Any time -> Custom range -> From -> To -> Go" sequence.
+A pro tool which allows you to search for just what you need within a specific time frame. An efficient alternative to Chrome's "Tools -> Any time -> Custom range -> From -> To -> Go" sequence.
 
 There are 4 ways to specify a date:
 
@@ -11,7 +11,7 @@ There are 4 ways to specify a date:
 3. From (date)** – date:mm/dd/yyyy
 4. Up to (date) – date:-mm/dd/yyyy
 
-Don't use spaces. Hereafter for this information you can reference a popup (by clicking on an extension icon displayed in the top right corner of the browser). Only United States date format is currently supported.
+Don't use spaces. Hereafter for this information you can reference a popup (by clicking an extension icon displayed in the top right corner of the browser). Only United States date format is currently supported.
 
 *By typing a date twice
 **You can also use this option if searching for today results
