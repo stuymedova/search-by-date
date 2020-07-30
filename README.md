@@ -20,8 +20,6 @@ Don't use spaces. Hereafter for this information you can reference a popup (by c
 
 ![1](https://user-images.githubusercontent.com/53351370/62665308-766ba380-b987-11e9-99f1-a410ac0c4b42.png)
 
-![2](https://user-images.githubusercontent.com/53351370/62665309-766ba380-b987-11e9-9c8f-641a58b7c408.png)
-
 ![5](https://user-images.githubusercontent.com/53351370/62665312-77043a00-b987-11e9-92fa-8cbd20a0088c.png)
 
 ![6](https://user-images.githubusercontent.com/53351370/62665313-77043a00-b987-11e9-9919-05e28ad94db1.png)
