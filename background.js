@@ -13,7 +13,6 @@ function updateQuery(defaultUrl) {
   var RegEx1 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
   var RegEx2 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
   var RegEx3 = /date%3A-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
-  var RegExQ = /(q=[^&]*)/;
 
   // [4]
   //checking for the "date:..."
