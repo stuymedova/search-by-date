@@ -1,7 +1,8 @@
 // Reference to a popup:
-// #1 - "date range" & "one day"
-// #2 - "from (date)"
-// #3 - "up to (date)"
+// #1 - "date range"
+// #2 - "one day"
+// #3 - "from (date)"
+// #4 - "up to (date)"
 
 // For reverse engineering follow numbers in the square brackets
 
@@ -12,13 +13,15 @@ function updateQuery(defaultUrl) {
   //RegEx(date:... & query)
   var RegEx1 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
   var RegEx2 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
-  var RegEx3 = /date%3A-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
+  var RegEx3 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-/;
+  var RegEx4 = /date%3A-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
 
   // [4]
   //checking for the "date:..."
   var test1 = RegEx1.test(defaultUrl);
   var test2 = RegEx2.test(defaultUrl);
   var test3 = RegEx3.test(defaultUrl);
+  var test4 = RegEx4.test(defaultUrl);
 
 
   // [6.1]
@@ -57,15 +60,28 @@ function updateQuery(defaultUrl) {
     var yyyy = nums[3];
   }
 
+  // [6.4]
+  //excluding "date:" from the query & extracting the date(numbers) - #4
+  if(test4) {
+    var query4 = defaultUrl.replace(RegEx4, "");
+
+    var nums = defaultUrl.match(RegEx4);
+    var mm = nums[1];
+    var dd = nums[2];
+    var yyyy = nums[3];
+  }
+
 
   // [3]
-  //appending the date
+  //appending the date (test2 is last in order to avoid an error)
   if(test1) {
     return query1 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm1 + "%2F" + dd1 + "%2F" + yyyy1 + "%2Ccd_max%3A" + mm2 + "%2F" + dd2 + "%2F" + yyyy2;
-  } else if(test2) {
-    return query2 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm + "%2F" + dd + "%2F" + yyyy;
   } else if(test3) {
-    return query3 + "&tbs=cdr%3A1%2Ccd_max%3A" + mm + "%2F" + dd + "%2F" + yyyy;
+    return query3 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm + "%2F" + dd + "%2F" + yyyy;
+  } else if(test4) {
+    return query4 + "&tbs=cdr%3A1%2Ccd_max%3A" + mm + "%2F" + dd + "%2F" + yyyy;
+  } else if(test2) {
+    return query2 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm + "%2F" + dd + "%2F" + yyyy + "%2Ccd_max%3A" + mm + "%2F" + dd + "%2F" + yyyy;
   } else {
     return defaultUrl;
   }
