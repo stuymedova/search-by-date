@@ -5,14 +5,11 @@ Pro tool which allows you to search for just what you need within a specific tim
 There are 4 ways to specify a date:
 
 1. Date range – date:mm/dd/yyyy-mm/dd/yyyy
-2. One day* – date:mm/dd/yyyy-mm/dd/yyyy
-3. From (date)** – date:mm/dd/yyyy
+2. One day – date:mm/dd/yyyy
+3. From (date) – date:mm/dd/yyyy-
 4. Up to (date) – date:-mm/dd/yyyy
 
 Don't use spaces. Hereafter for this information you can reference a popup (by clicking an extension icon displayed in the top right corner of the browser). Only United States date format (mm/dd/yyyy) is currently supported.
-
-*By typing the date twice
-**You can also use this option when searching for today's results
 
 #### link: https://chrome.google.com/webstore/detail/search-by-date/cdhckogdanaloniccgjgfjgngmgkelee
 
