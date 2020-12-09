@@ -1,40 +1,39 @@
-@font-face {
-  font-family: century-gothic;
-  src:  url('assets/fonts/CenturyGothic-Bold.ttf') format('truetype');
-}
-
 body {
-  width: 305px;
+  margin: 0;
+  padding: 0;
+
+  width: 300px;
+  color: #fff;
   background-color: #000;
+
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-p {
-  text-align: center;
-  font-family: century-gothic, sans-serif;
-  font-size: 18px;
-  color: #fafafa;
-  margin: 5px;
+h1 {
+  font-size: .96rem;
+  font-weight: normal;
+  
+  padding: .4rem;
+  margin: 0;
 }
 
 table {
-  font-family: century-gothic, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 0.02em;
-  color:#fafafa;
-  
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  width: 100%;
 
-  border-collapse: separate;
-  border: 1px solid #63636e;
-  border-spacing: 10px 0;
-  border-radius: 15px;
-  margin: 0px;
+  border-collapse: collapse;
+  border-top: 1px solid #2b2b2e;
+
+  font-size: .8rem;
+  
+  padding: .4rem;
+  margin: 0;
 }
 
-tr.row>td {
-  padding: 3px;
+th, td {
+  text-align: left;
+  padding: .3rem .4rem;
+}
+
+tr:nth-child(even) {
+  background-color: #2b2b2e;
 }

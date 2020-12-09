@@ -4,20 +4,20 @@
 // #3 - "from (date)"
 // #4 - "up to (date)"
 
-// For reverse engineering follow numbers in the square brackets
+// To reverse engineer follow numbers in square brackets
 
 // [2]
 function updateQuery(defaultUrl) {
 
   // [5]
-  //RegEx(date:... & query)
+  // RegEx (date:... & query)
   var RegEx1 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
   var RegEx2 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
   var RegEx3 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-/;
   var RegEx4 = /date%3A-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
 
   // [4]
-  //checking for the "date:..."
+  // checking for the "date:..."
   var test1 = RegEx1.test(defaultUrl);
   var test2 = RegEx2.test(defaultUrl);
   var test3 = RegEx3.test(defaultUrl);
@@ -25,7 +25,7 @@ function updateQuery(defaultUrl) {
 
 
   // [6.1]
-  //excluding "date:" from the query & extracting the date(numbers) - #1
+  // excluding "date:" from the query & extracting the date (numbers) - #1
   if(test1) {
     var query1 = defaultUrl.replace(RegEx1, "");
 
@@ -39,7 +39,7 @@ function updateQuery(defaultUrl) {
   }
 
   // [6.2]
-  //excluding "date:" from the query & extracting the date(numbers) - #2
+  // excluding "date:" from the query & extracting the date (numbers) - #2
   if(test2) {
     var query2 = defaultUrl.replace(RegEx2, "");
 
@@ -50,7 +50,7 @@ function updateQuery(defaultUrl) {
   }
 
   // [6.3]
-  //excluding "date:" from the query & extracting the date(numbers) - #3
+  // excluding "date:" from the query & extracting the date (numbers) - #3
   if(test3) {
     var query3 = defaultUrl.replace(RegEx3, "");
 
@@ -61,7 +61,7 @@ function updateQuery(defaultUrl) {
   }
 
   // [6.4]
-  //excluding "date:" from the query & extracting the date(numbers) - #4
+  // excluding "date:" from the query & extracting the date(numbers) - #4
   if(test4) {
     var query4 = defaultUrl.replace(RegEx4, "");
 
@@ -73,7 +73,7 @@ function updateQuery(defaultUrl) {
 
 
   // [3]
-  //appending the date (test2 is last in order to avoid an error)
+  // appending the date (test2 placed last to avoid an error)
   if(test1) {
     return query1 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm1 + "%2F" + dd1 + "%2F" + yyyy1 + "%2Ccd_max%3A" + mm2 + "%2F" + dd2 + "%2F" + yyyy2;
   } else if(test3) {
@@ -90,18 +90,18 @@ function updateQuery(defaultUrl) {
 
 // [1]
 chrome.webRequest.onBeforeRequest.addListener(
-  //callback
+  // callback
   function(details) {
     return {
       redirectUrl: updateQuery(details.url)
     };
   },
-  //filter
+  // filter
   {
     urls: [
       "*://*.google.com/search?*"
     ]
   },
-  //extraInfoSpec
+  // extraInfoSpec
   ["blocking"]
 );
