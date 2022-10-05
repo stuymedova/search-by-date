@@ -1,9 +1,9 @@
-// | Search by Date                                |
-// | ------------ | ------------------------------ |
-// | date range   | date:mm/dd/yyyy-mm/dd/yyyy     |
-// | one day      | date:mm/dd/yyyy                |
-// | from date    | date:mm/dd/yyyy-               |
-// | up to date   | date:-mm/dd/yyyy               |
+// | Search by Date                                 |
+// | ------------- | ------------------------------ |
+// | date range    | date:mm/dd/yyyy-mm/dd/yyyy     |
+// | one day       | date:mm/dd/yyyy                |
+// | from (date)   | date:mm/dd/yyyy-               |
+// | up to (date)  | date:-mm/dd/yyyy               |
 
 function getRedirectUrl(givenUrl) {
   const dateRangeRegEx = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/
