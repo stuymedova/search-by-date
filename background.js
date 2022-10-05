@@ -1,107 +1,76 @@
-// Reference to a popup:
-// #1 - "date range"
-// #2 - "one day"
-// #3 - "from (date)"
-// #4 - "up to (date)"
+// | Search by Date                                |
+// | ------------ | ------------------------------ |
+// | date range   | date:mm/dd/yyyy-mm/dd/yyyy     |
+// | one day      | date:mm/dd/yyyy                |
+// | from date    | date:mm/dd/yyyy-               |
+// | up to date   | date:-mm/dd/yyyy               |
 
-// To reverse engineer follow numbers in square brackets
+function getRedirectUrl(givenUrl) {
+  const dateRangeRegEx = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/
+  const oneDayRegEx = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})/
+  const fromDateRegEx = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-/
+  const upToDateRegEx = /date%3A-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/
 
-// [2]
-function updateQuery(defaultUrl) {
+  const isDateRange = dateRangeRegEx.test(givenUrl)
+  const isOneDay = oneDayRegEx.test(givenUrl)
+  const isFromDate = fromDateRegEx.test(givenUrl)
+  const isUpToDate = upToDateRegEx.test(givenUrl)
+  
+  // Date range
+  if (isDateRange) {
+    const newUrl = new URL(givenUrl.replace(dateRangeRegEx, ''))
+    const [_, fromMonth, fromDay, fromYear, upToMonth, upToDay, upToYear] = givenUrl.match(dateRangeRegEx)
+    
+    newUrl.searchParams.set(
+      'tbs', 
+      `cdr:1,cd_min:${fromMonth}/${fromDay}/${fromYear},cd_max:${upToMonth}/${upToDay}/${upToYear}`)
 
-  // [5]
-  // RegEx (date:... & query)
-  var RegEx1 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
-  var RegEx2 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
-  var RegEx3 = /date%3A(\d{1,2})%2F(\d{1,2})%2F(\d{4})-/;
-  var RegEx4 = /date%3A-(\d{1,2})%2F(\d{1,2})%2F(\d{4})/;
+    return newUrl.toString()
 
-  // [4]
-  // checking for the "date:..."
-  var test1 = RegEx1.test(defaultUrl);
-  var test2 = RegEx2.test(defaultUrl);
-  var test3 = RegEx3.test(defaultUrl);
-  var test4 = RegEx4.test(defaultUrl);
+  // From date
+  } else if (isFromDate) {
+    const newUrl = new URL(givenUrl.replace(fromDateRegEx, ''))
+    const [_, fromMonth, fromDay, fromYear] = givenUrl.match(fromDateRegEx)
 
+    newUrl.searchParams.set(
+      'tbs', 
+      `cdr:1,cd_min:${fromMonth}/${fromDay}/${fromYear}`)
 
-  // [6.1]
-  // excluding "date:" from the query & extracting the date (numbers) - #1
-  if(test1) {
-    var query1 = defaultUrl.replace(RegEx1, "");
+    return newUrl.toString()
 
-    var nums = defaultUrl.match(RegEx1);
-    var mm1 = nums[1];
-    var dd1 = nums[2];
-    var yyyy1 = nums[3];
-    var mm2 = nums[4];
-    var dd2 = nums[5];
-    var yyyy2 = nums[6];
-  }
+  // Up to date
+  } else if (isUpToDate) {
+    const newUrl = new URL(givenUrl.replace(upToDateRegEx, ''))
+    const [_, upToMonth, upToDay, upToYear] = givenUrl.match(upToDateRegEx)
+    
+    newUrl.searchParams.set(
+      'tbs', 
+      `cdr:1,cd_max:${upToMonth}/${upToDay}/${upToYear}`)
 
-  // [6.2]
-  // excluding "date:" from the query & extracting the date (numbers) - #2
-  if(test2) {
-    var query2 = defaultUrl.replace(RegEx2, "");
+    return newUrl.toString()
 
-    var nums = defaultUrl.match(RegEx2);
-    var mm = nums[1];
-    var dd = nums[2];
-    var yyyy = nums[3];
-  }
+  // One day
+  } else if (isOneDay) {
+    const newUrl = new URL(givenUrl.replace(oneDayRegEx, ''))
+    const [_, month, day, year] = givenUrl.match(oneDayRegEx)
+    
+    newUrl.searchParams.set(
+      'tbs', 
+      `cdr:1,cd_min:${month}/${day}/${year},cd_max:${month}/${day}/${year}`)
 
-  // [6.3]
-  // excluding "date:" from the query & extracting the date (numbers) - #3
-  if(test3) {
-    var query3 = defaultUrl.replace(RegEx3, "");
+    return newUrl.toString()
 
-    var nums = defaultUrl.match(RegEx3);
-    var mm = nums[1];
-    var dd = nums[2];
-    var yyyy = nums[3];
-  }
-
-  // [6.4]
-  // excluding "date:" from the query & extracting the date(numbers) - #4
-  if(test4) {
-    var query4 = defaultUrl.replace(RegEx4, "");
-
-    var nums = defaultUrl.match(RegEx4);
-    var mm = nums[1];
-    var dd = nums[2];
-    var yyyy = nums[3];
-  }
-
-
-  // [3]
-  // appending the date (test2 placed last to avoid an error)
-  if(test1) {
-    return query1 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm1 + "%2F" + dd1 + "%2F" + yyyy1 + "%2Ccd_max%3A" + mm2 + "%2F" + dd2 + "%2F" + yyyy2;
-  } else if(test3) {
-    return query3 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm + "%2F" + dd + "%2F" + yyyy;
-  } else if(test4) {
-    return query4 + "&tbs=cdr%3A1%2Ccd_max%3A" + mm + "%2F" + dd + "%2F" + yyyy;
-  } else if(test2) {
-    return query2 + "&tbs=cdr%3A1%2Ccd_min%3A" + mm + "%2F" + dd + "%2F" + yyyy + "%2Ccd_max%3A" + mm + "%2F" + dd + "%2F" + yyyy;
+  // Or otherwise
   } else {
-    return defaultUrl;
+    return givenUrl
   }
 }
 
-
-// [1]
 chrome.webRequest.onBeforeRequest.addListener(
   // callback
-  function(details) {
-    return {
-      redirectUrl: updateQuery(details.url)
-    };
-  },
+  (details) => { return { redirectUrl: getRedirectUrl(details.url) }},
   // filter
-  {
-    urls: [
-      "*://*.google.com/search?*"
-    ]
-  },
+  { urls: ['*://*.google.com/search?*'] },
   // extraInfoSpec
-  ["blocking"]
+  ['blocking']
 );

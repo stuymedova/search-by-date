@@ -1,32 +1,28 @@
 body {
   margin: 0;
   padding: 0;
-
   width: 300px;
+  height: auto;
   color: #fff;
   background-color: #000;
-
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1 {
+  margin: 0;
+  padding: .4rem;
   font-size: .96rem;
   font-weight: normal;
-  
-  padding: .4rem;
-  margin: 0;
 }
 
 table {
+  margin: 0;
+  padding: .4rem;
   width: 100%;
-
+  height: auto;
+  font-size: .8rem;
   border-collapse: collapse;
   border-top: 1px solid #2b2b2e;
-
-  font-size: .8rem;
-  
-  padding: .4rem;
-  margin: 0;
 }
 
 th, td {

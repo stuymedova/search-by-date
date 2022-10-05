@@ -13,10 +13,10 @@ Don't add spaces. Hereafter this information can be referenced through a popup (
 
 #### Chrome Web Store: https://chrome.google.com/webstore/detail/search-by-date/cdhckogdanaloniccgjgfjgngmgkelee
 
-![logo](assets/webstore/logo.png)
+![logo](assets/marketing/logo.png)
 
-![sh1](assets/webstore/sh1.png)
+![screenshot1](assets/marketing/screenshot1.png)
 
-![sh2](assets/webstore/sh2.png)
+![screenshot2](assets/marketing/screenshot2.png)
 
-![sh3](assets/webstore/sh3.png)
+![screenshot3](assets/marketing/screenshot3.png)
